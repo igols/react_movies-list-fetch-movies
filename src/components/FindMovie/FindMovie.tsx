@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import './FindMovie.scss';
 import { Movie } from '../../types/Movie';
 import { MovieCard } from '../MovieCard';
-//import { MoviesList } from '../MoviesList';
 import { getMovie } from '../../api';
 import { Loader } from '../Loader';
-//import { event } from 'cypress/types/jquery';
 
 type Props = {
   addMovie: (movie: Movie) => void;
@@ -103,7 +101,7 @@ export const FindMovie: React.FC<Props> = ({ addMovie }) => {
 
       <div className="container" data-cy="previewContainer">
         <h2 className="title">Preview</h2>
-        {<MovieCard movie={movie} />}
+        {movie && <MovieCard movie={movie} />}
       </div>
     </>
   );
